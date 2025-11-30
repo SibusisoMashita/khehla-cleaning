@@ -1,18 +1,5 @@
 ---
 deployment:
   tasks:
-    # 1) Define target public directory
-    - export DEPLOYPATH=/home/khehlac/public_html/
-
-    # 2) Clear old deployment (but keep public_html folder itself)
-    - /bin/rm -rf $DEPLOYPATH/*
-
-    # 3) Copy files & folders from repo to public_html
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R components $DEPLOYPATH
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp quote.html $DEPLOYPATH
-    - /bin/cp README.md $DEPLOYPATH
-
-    # 4) Create a deployment timestamp (helps debugging)
-    - echo "Deployed on $(date)" > $DEPLOYPATH/.last_deployed
+    - export DEPLOYPATH=/home/example/public_html/
+    - /bin/cp -R images $DEPLOYPATH

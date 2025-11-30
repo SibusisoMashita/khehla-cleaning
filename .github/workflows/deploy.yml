@@ -16,7 +16,7 @@ jobs:
       - name: Deploy to cPanel using SFTP with SSH key
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ftp.khehlacleanings.co.za
+          server: 169.239.218.70
           port: 22000
           username: khehlacl
           ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}

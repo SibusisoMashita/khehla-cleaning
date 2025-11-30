@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to cPanel using SFTP with SSH key
+      - name: Deploy to cPanel via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: 169.239.218.70
@@ -25,3 +25,14 @@ jobs:
           sftp_only: true
           sftpArgs: "-o StrictHostKeyChecking=no"
           delete_remote_files: false
+
+          exclude: |
+            **/.git**
+            **/.github/**
+            **/.idea/**
+            **/.vscode/**
+            **/.cpanel.yml
+            **/README.md
+            **/README.MD
+            **/.DS_Store
+            .gitignore

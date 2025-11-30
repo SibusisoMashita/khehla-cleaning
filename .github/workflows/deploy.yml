@@ -13,19 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to cPanel via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy to cPanel using SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
-          server: 169.239.218.70
+          server: ${{ secrets.SFTP_HOST }}
+          username: "khehlacl"
           port: 22000
-          username: khehlacl
-          ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
-          local_path: "./"
-          remote_path: "/home/khehlacl/public_html/"
-          sftp_only: true
-          sftpArgs: "-o StrictHostKeyChecking=no"
-          delete_remote_files: false
-
+          protocol: "sftp"
+          private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
+          local-dir: "./"
+          server-dir: "/home/khehlacl/public_html/"
           exclude: |
             **/.git**
             **/.github/**
@@ -33,6 +30,6 @@ jobs:
             **/.vscode/**
             **/.cpanel.yml
             **/README.md
-            **/README.MD
-            **/.DS_Store
+            **/*.yml
+            **/*.yaml
             .gitignore

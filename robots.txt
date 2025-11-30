@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khehlacleanings.co.za/sitemap.xml

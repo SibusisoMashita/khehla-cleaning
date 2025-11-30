@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request a Quote - Khehla Cleanings</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Request a Quote | Khehla Cleanings</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Request a fast cleaning quote from Khehla Cleanings. Choose your services and send directly via WhatsApp.">
+    <meta name="keywords" content="cleaning quote, Khehla Cleanings, request quote, cleaning services quote">
+    <meta name="author" content="Khehla Cleanings">
+
+    <link rel="canonical" href="https://khehlacleanings.co.za/quote.html">
+
+    <!-- OG -->
+    <meta property="og:title" content="Request a Cleaning Quote">
+    <meta property="og:description" content="Select your needs and send your request instantly via WhatsApp.">
+    <meta property="og:image" content="https://khehlacleanings.co.za/assets/img/logo.png">
+    <meta property="og:type" content="website">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
 
-  <!-- Dynamic Header -->
-  <div id="header"></div>
+<!-- Header -->
+<div id="header"></div>
 
-  <section class="quote-form-section">
+<section class="quote-form-section">
     <h2>Request a Cleaning Quote</h2>
     <p class="form-subtext">Select the services you need and send us a WhatsApp message instantly.</p>
 
-	<form id="quoteForm">
+    <form id="quoteForm">
 
-	  <!-- Name -->
-	  <label for="name">Full Name *</label>
-	  <input type="text" id="name" placeholder="Enter your full name" required />
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" placeholder="Enter your full name" required />
 
-	  <!-- Location -->
-	  <label for="location">Your Address / Location *</label>
-	  <input type="text" id="location" placeholder="e.g. Soweto, Sandton, Midrand" required />
+        <label for="location">Your Location *</label>
+        <input type="text" id="location" placeholder="City / Area" required />
 
-	  <!-- Phone -->
-	  <label for="phone">Phone Number</label>
-	  <input type="text" id="phone" placeholder="Optional but recommended" />
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" placeholder="Optional">
 
-	  <!-- Email -->
-	  <label for="email">Email Address</label>
-	  <input type="email" id="email" placeholder="Optional" />
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Optional">
 
-	  <!-- Date -->
-	  <label for="date">Preferred Date</label>
-	  <input type="date" id="date" />
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" />
 
-	  <!-- Services -->
-	  <label>Select Services *</label>
-	  <div class="checkbox-grid">
+        <label>Select Services *</label>
+        <div class="checkbox-grid">
 
-		<label><input type="checkbox" value="House Deep Cleaning"> House Deep Cleaning</label>
-		<label><input type="checkbox" value="Carpet Cleaning"> Carpet Cleaning</label>
-		<label><input type="checkbox" value="Couch Cleaning"> Couch Cleaning</label>
-		<label><input type="checkbox" value="Tiles & Floors Cleaning"> Tiles & Floors Cleaning</label>
-		<label><input type="checkbox" value="Solar Panel Cleaning"> Solar Panel Cleaning</label>
-		<label><input type="checkbox" value="Paving Cleaning"> Paving Cleaning</label>
-		<label><input type="checkbox" value="Office Chairs Cleaning"> Office Chairs Cleaning</label>
-		<label><input type="checkbox" value="Mattresses Cleaning"> Mattresses Cleaning</label>
-		<label><input type="checkbox" value="Window Cleaning"> Window Cleaning</label>
-		<label><input type="checkbox" value="Car Seats Cleaning"> Car Seats Cleaning</label>
+            <label><input type="checkbox" value="House Deep Cleaning"> House Deep Cleaning</label>
+            <label><input type="checkbox" value="Carpet Cleaning"> Carpet Cleaning</label>
+            <label><input type="checkbox" value="Couch Cleaning"> Couch Cleaning</label>
+            <label><input type="checkbox" value="Tiles & Floors Cleaning"> Tiles & Floors Cleaning</label>
+            <label><input type="checkbox" value="Solar Panel Cleaning"> Solar Panel Cleaning</label>
+            <label><input type="checkbox" value="Paving Cleaning"> Paving Cleaning</label>
+            <label><input type="checkbox" value="Office Chairs Cleaning"> Office Chairs Cleaning</label>
+            <label><input type="checkbox" value="Mattresses Cleaning"> Mattresses Cleaning</label>
+            <label><input type="checkbox" value="Window Cleaning"> Window Cleaning</label>
+            <label><input type="checkbox" value="Car Seats Cleaning"> Car Seats Cleaning</label>
 
-	  </div>
+        </div>
 
-	  <!-- Notes -->
-	  <label for="notes">Additional Notes</label>
-	  <textarea id="notes" rows="4" placeholder="Any extra information..."></textarea>
+        <label for="notes">Additional Notes</label>
+        <textarea id="notes" rows="4" placeholder="Any extra information..."></textarea>
 
-	  <!-- Submit -->
-	  <button type="button" class="btn" onclick="sendWhatsApp()">Send via WhatsApp</button>
-	</form>
+        <button type="button" class="btn" onclick="sendWhatsApp()">Send via WhatsApp</button>
 
-  </section>
+    </form>
+</section>
 
-  <!-- Dynamic Footer -->
-  <div id="footer"></div>
+<div id="footer"></div>
 
-  <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

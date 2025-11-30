@@ -1,17 +1,9 @@
----
 deployment:
   tasks:
     - export DEPLOYPATH=/home/khehlac/public_html/
-
-    # Clean the public_html directory before deployment
     - /bin/rm -rf $DEPLOYPATH/*
-
-    # Copy all project files except Git-related and GitHub workflow directories
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R components $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp quote.html $DEPLOYPATH
-    - /bin/cp README.md $DEPLOYPATH
-
-    # Ensure hidden files like .htaccess are handled (if you add them later)
-    - if [ -f .htaccess ]; then /bin/cp .htaccess $DEPLOYPATH; fi
+    - if [ -f README.md ]; then /bin/cp README.md $DEPLOYPATH; fi

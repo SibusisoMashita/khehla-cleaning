@@ -1,9 +1,6 @@
+---
 deployment:
   tasks:
     - export DEPLOYPATH=/home/khehlac/public_html/
-    - /bin/rm -rf $DEPLOYPATH/*
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R components $DEPLOYPATH
+    - echo "Deploying test index.html..." > $DEPLOYPATH/deploy-log.txt
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp quote.html $DEPLOYPATH
-    - if [ -f README.md ]; then /bin/cp README.md $DEPLOYPATH; fi

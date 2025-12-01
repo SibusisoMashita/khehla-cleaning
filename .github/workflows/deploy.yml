@@ -1,4 +1,4 @@
-name: 🚀 Deploy via SFTP with SSH Key
+name: 🚀 Deploy via FTPS
 
 on:
   push:
@@ -13,13 +13,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy via SFTP
-        uses: easingthemes/ssh-deploy@v2
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
-          ARGS: "-rltgoDzvO --delete --exclude='.git/' --exclude='.github/' --exclude='.idea/' --exclude='.vscode/' --exclude='README.md' --exclude='.cpanel.yml'"
-          SOURCE: "./"
-          REMOTE_HOST: ${{ secrets.SFTP_HOST }}
-          REMOTE_USER: "khehlacl"
-          REMOTE_PORT: "22000"
-          TARGET: "/home/khehlacl/public_html/"
+      - name: Deploy to cPanel via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: "./"
+          server-dir: "/home/khehlacl/public_html/"
+          log-level: verbose
+          exclude: |
+            **/.git**
+            **/.github/**
+            **/.idea/**
+            **/.vscode/**
+            README.md
+            .cpanel.yml
+            .gitignore

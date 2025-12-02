@@ -1,16 +1,17 @@
 ---
 deployment:
   tasks:
-    - export SITE_DIR=/home/khehlacl/public_html
+    - export SITE_DIR=/home/khehlacl/public_html/khehlacleanings.co.za
+
     # Create the directory if missing
     - mkdir -p $SITE_DIR
 
-    # Clean previous files (optional)
+    # Clean old files
     - /bin/rm -rf $SITE_DIR/*
 
-    # Copy all repo files to the website directory
+    # Copy all project files to this domain's folder
     - /bin/cp -R * $SITE_DIR
 
-    # Set correct permissions
+    # Set permissions
     - /bin/find $SITE_DIR -type d -exec chmod 755 {} \;
     - /bin/find $SITE_DIR -type f -exec chmod 644 {} \;

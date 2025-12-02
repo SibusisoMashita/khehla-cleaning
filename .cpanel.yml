@@ -1,5 +1,17 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/example/public_html/
-    - /bin/cp -R images $DEPLOYPATH
+    - export SITE_DIR=/home/khehlacl/public_html/khehlacleanings.co.za
+
+    # Create the directory if missing
+    - mkdir -p $SITE_DIR
+
+    # Clean previous files (optional)
+    - /bin/rm -rf $SITE_DIR/*
+
+    # Copy all repo files to the website directory
+    - /bin/cp -R * $SITE_DIR
+
+    # Set correct permissions
+    - /bin/find $SITE_DIR -type d -exec chmod 755 {} \;
+    - /bin/find $SITE_DIR -type f -exec chmod 644 {} \;

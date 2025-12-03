@@ -54,7 +54,7 @@ ${services.map(s => "- " + s).join("\n")}
 Notes: ${notes || "None"}
   `;
 
-  const url = "https://wa.me/2778194497?text=" + encodeURIComponent(message);
+  const url = "https://wa.me/27784194497?text=" + encodeURIComponent(message);
 
   window.open(url, "_blank");
 }
